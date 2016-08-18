@@ -1,7 +1,8 @@
 var CarLot = (function(populate){
 
 function populatePage (inventory) {
-  // Loop over the inventory and populate the page
+  return new Promise(function(resolve){
+    // Loop over the inventory and populate the page
   var container = document.getElementById("carLot");
   var result = "";
   inventory.forEach(function(car, i){
@@ -23,7 +24,8 @@ function populatePage (inventory) {
     }
   })
   container.innerHTML = result
-  populate.activateEvents(inventory)
+  resolve(inventory)
+  })
 }
   //Grab all cards and put an event listener on each one. When one is clicked the input text is cleared and focused on. The border change function is also called.
   populate.activateEvents = function(inventory){
@@ -83,7 +85,11 @@ function populatePage (inventory) {
    CarLot.loadInventory()
    //.then will not do anything until the previous action was completed.
    .then(function(dataFromPromise){
-      populatePage(dataFromPromise)
+      //
+      return populatePage(dataFromPromise)
+   })
+   .then(function(inventory){
+      CarLot.activateEvents(inventory)
    })
    return populate;
 }) (CarLot || {})
