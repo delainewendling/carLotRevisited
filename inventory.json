@@ -1,0 +1,58 @@
+{
+  "cars": [
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8,999",
+      "color": "FireBrick",
+      "purchased": false,
+      "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+    },
+    {
+      "make": "Toyota",
+      "model": "Avalon",
+      "year": "1996",
+      "price": "1,599",
+      "color": "Black",
+      "purchased": true,
+      "description": "This car has been in the family for many years. It is time for it to have a new owner. 236,000 miles and it still runs like a charm."
+    },
+    {
+      "make": "Honda",
+      "model": "Accord",
+      "year": "2000",
+      "price": "4,599",
+      "color": "GoldenRod",
+      "purchased": false,
+      "description": "This is an ultimate comfort car. Lots of room for stuff and people. Get on this deal now!"
+    },
+    {
+      "make": "Mini",
+      "model": "Cooper",
+      "year": "2015",
+      "price": "11,450",
+      "color": "DarkMagenta",
+      "purchased": false,
+      "description": "Want to be the talk of the town? This baby has a lot of power and cuteness."
+    },
+    {
+      "make": "Volkswagon",
+      "model": "Jetta",
+      "year": "2007",
+      "price": "7,950",
+      "color": "DarkSlateBlue",
+      "purchased": true,
+      "description": "This is the ultimate luxury car. Looks brand new even with 189,350 miles."
+    },
+    {
+      "make": "Audi",
+      "model": "Q5",
+      "year": "2011",
+      "price": "12,976",
+      "color": "Crimson",
+      "purchased": false,
+      "description": "This is the car you've dreamt of as a kid. Looks great, feels great. "
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+.carCard {
+  margin-bottom: 20px;
+}
+.carInfo {
+  text-align: center;
+}
+.description {
+  font-size: 1em;
+  padding: 10px;
+}
+.carYear {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+.carsColor {
+  font-size: .9em;
+  text-align: center;
+}
+.carPrice {
+  font-size: 1.7em;
+  text-align: center;
+}
+.forSale {
+  display: table;
+  background-color: green;
+  color: white;
+  border: 1px solid black;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.sold {
+  display: table;
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+#inputText {
+  max-width: 85%;
+  margin: 10px auto;
+}
+.submit {
+  margin: 0 0 15px 45%;
+}
+
+.styleCard {
+  border-width: 10px;
+  background-color: #fff8dc;
+}
