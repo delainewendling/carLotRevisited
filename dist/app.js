@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 //this tells the file what files you will need to pull in
 var carInventory = require('./load'),
@@ -96,3 +97,47 @@ carInventory.loadInventory() //use the variable name we created above and call t
 });
 
 
+
+},{"./load":2,"./styles":3}],2:[function(require,module,exports){
+"use strict";
+var inventory = [];
+
+var getInventory = function () {
+    return inventory;
+};
+var loadInventory = function () {
+  //Promise constructor, creating a new instance of a Promise
+  return new Promise (function (resolve, reject){
+  var inventoryLoader = new XMLHttpRequest();
+  inventoryLoader.open('GET', 'inventory.json');
+  inventoryLoader.send();
+  inventoryLoader.addEventListener("load", function () {
+     inventory = JSON.parse(this.responseText).cars;
+     resolve(inventory) ;//No longer responsible for calling populatePage. Instead, we are returning a promise with the data wrapped up in it. Now loadInventory can make data available to many different functions. Resolve's partner in crime is .then. Resolve will run once the promise is returned to the callsite.
+  });
+});
+};
+
+//Object literal shorthand. Allows you to create an object without creating key/value pairs. It will assign a key that is the same as the value
+module.exports = {getInventory, loadInventory};
+//the line above "exposes" the following functions to the public interface
+
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+var colorReset = function(cards){
+  cards.forEach((card)=>{
+    card.style.borderWidth ="3px";
+    card.style.backgroundColor ="white";
+  });
+};
+
+var styleCard= function(card){
+  console.log(card);
+  card.style.borderWidth = "10px";
+  card.style.backgroundColor = "#fff8dc";
+};
+
+module.exports = {colorReset, styleCard};
+},{}]},{},[1]);
